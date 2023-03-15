@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>My Blog</title>
+</head>
+<body>
+   <!-- Header -->
+   <header>
+      <div class="head">
+         <img  class="head-logo" src="./assets/logo.jpg" width="100px" height="100px" alt="Brand Logo">
+         <a href="#">
+            <div class="head-go">
+               HOME
+            </div>
+         </a>
+      </div>
+   </header>
+   <hr>
+   <!-- Hero section -->
+   <div class="container hero-container">
+      <a href="./pages/phantom.html">
+         <img class="hero-image" src="./assets/phantom-20231e.jpg" />
+         <!-- <div class="author-img">
+            <img src="./assets/matt.jpeg" alt="">
+         </div>
+          -->
+         <div class="hero-author">
+            Tim Morris, March 12, 2021
+         </div>
+         <div class="hero-title">
+            Favourite Cars of All Time
+         </div>
+         <div class="hero-subtitle">
+            Get to know more about them
+         </div>
+      </a>
+   </div>
+   <hr>
+   <!-- main -->
+   <main>
+      <div class="wow">
+         <p style="font-size: large; padding-top: 10%; text-align: center;">
+            Go into the details of the fine piece of machine, luxury, speed and many more
+         </p>
+         <img src="./assets/Rolls Royce Bespoke.jpg" width="500px" style="padding-left: 5px;border-radius: 10px;" alt="">
+         <img src="./assets/Toyota Land Cruiser 2021.png" width="300px" style="padding-left: 5px;border-radius: 10px;" alt="">
+      </div>
+      <!-- More Blogs -->
+      <div class="products-container">
+         <div class="products-title-container">
+             <h3>Top Trending Products</h3>
+         </div>
+
+         <div id="product-list-container">
+         </div>
+     </div>
+   </main>
+   <hr>
+   <footer>
+      <div class="footer-column">
+         <div class="contact-details">
+            <ul class="contact-links">
+               <li class="call-details">
+                  <span>
+                     Call:
+                     <a href="tel:+442045864000">9841497247</a>
+                  </span>
+               </li>
+            </ul>
+         </div>
+         <!-- icons -->
+         <div class="social-icons">
+            <div class="social-content">
+               <a href="https://www.linkedin.com/in/ujjwal-jha-862a23136/">
+                  <img src="./assets/linkedin.png" class="socialIcons" alt="">
+               </a>
+            </div>
+            <div class="social-content">
+               <a href="https://www.instagram.com/jha.ujjwal_/">
+                  <img src="./assets/instagram.png" class="socialIcons" alt="">
+               </a>
+            </div>
+            <div class="social-content">
+               <a href="https://www.facebook.com/me/">
+                  <img src="./assets/facebook.png" class="socialIcons" alt="">
+               </a>         
+            </div>
+         </div>
+      </div>
+      <div class="foot">
+         <p>© 2023 Ujjwal's Blogs. All rights reserved</p>
+      </div>
+   </footer>
+   
+   
+   <script src="cars.js"></script>
+   <script>
+       let globalDataRecord = []
+            function getBlog() {
+                globalDataRecord = [...cars]
+            }
+            getBlog();
+            const productContainer = document.getElementById(
+                    "product-list-container"
+                );
+                
+                globalDataRecord.forEach((item) => {
+                    const singleProduct = `
+                    <div class="product-card">
+                        <img
+                        class="product-image"
+                        src="${item.image}"
+                        />
+                        <h4 style="padding: 5px">${item.title}</h4>
+                        <p style="padding: 5px">By: ${item.author} </p>
+                        <p style="padding: 5px">Date: ${item.date}</p>
+                    </div>`;
+
+                    productContainer.innerHTML += singleProduct
+                });
+                
+  </script>
+</body>
+</html>

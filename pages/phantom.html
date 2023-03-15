@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../newpage.css">
+   <title>Document</title>
+</head>
+<body>
+   <!-- Header -->
+   <header>
+      <div class="head">
+         <img  class="head-logo" src="../assets/logo.jpg" width="100px" height="100px" alt="Brand Logo">
+         <a href="#">
+            <div class="head-go">
+               HOME
+            </div>
+         </a>
+      </div>
+   </header>
+   <div class="container hero-container">
+      
+         <img class="hero-image" src="../assets/phantom-20231e.jpg" />
+         <div class="hero-author">
+            Tim Morris, March 12, 2021
+         </div>
+         <div class="hero-title">
+            Favourite Cars of All Time
+         </div>
+         <div class="hero-subtitle">
+            Get to know more about them
+         </div>
+      
+   </div>
+   <main>
+      <aside class="aside-container">
+         <div class="products-container">
+            <div class="products-title-container">
+                <h3>Top Trending Products</h3>
+            </div>
+   
+            <div id="product-list-container">
+            </div>
+        </div>
+      </aside>
+      <div class="main-div">
+         <p style="font-size: large;">
+            Rolls-Royce has revealed the prices of the eighth-generation of the Phantom in India. The CBU unit is priced at Rs 9.5 crores for the standard wheelbase and extends to Rs 11.5 crores for the extended wheelbase version with personalisation options. 2018 Rolls-Royce Phantom is the most expensive car on sale in India currently. Underneath the car is an all-aluminium spaceframe chassis which is loosely related to that of its predecessor. <br><br> Rolls-Royce says that it is lighter in weight and 30 per cent stiffer than before, traits that make the new Phantom more efficient. The British luxury carmaker has also confirmed that the platform will underpin its first-ever SUV, the Cullinan, and the next generation models of the Wraith, Dawn and the Ghost. Rolls-Royce says that none of its cars, in the future, will have a monocoque construction either.
+         </p>
+         <p style="font-size: large;">
+            Having served maharajas and nizams ever since it first rolled out in 1925, the Phantom needs no introduction. Rolls-Royce has now launched the eighth generation of its flagship, the Phantom, at a price of Rs 9.5 crore, stretching to Rs 11.5 crores for the extended wheelbase version. In its most recent garb the 2018 RR Phantom seems like an even bigger delight to the eyes. <br><br> The 2018 Rolls-Royce Phantom has been updated after nearly 16 years and betters its previous iteration in more than one way. It's eighth generation retains all the machismo with the bling that you’d expect of a Rolls-Royce, but in a slightly wider and taller package.
+         </p>
+         <p style="font-size: large;">
+            
+         </p>
+         <div class="imgside">
+            <img src="https://stimg2.cardekho.com/images/carNewsEditorImages/816x544/20180223_151109/21463/rolls-royce0.jpg"  width="450px" alt="">
+            <p style="font-size: large;">
+               Based on the new spaceframe structure called Architecture of Luxury, the new RR is 30 per cent lighter than the previous model. It is now 77mm shorter but 8mm taller and 29mm wider than before. <br> It runs on huge 22-inch dual-skin alloy wheels that come with Rolls-Royce’s seal technology which improves the ride quality further. <br><br> The Spirit of Ecstasy on that chunky chrome grille just looks Wow! Also, the LED headlamps with LED DRLs bear RR insignia on the inside. Even from the rear, the design looks true to its roots i.e. pure British
+            </p>
+         </div>
+         
+         <p style="font-size: large;">
+            
+         </p>
+         <p style="font-size: large;">
+            
+         </p>
+         <div class="imgside">
+            <img src="https://stimg2.cardekho.com/images/carNewsEditorImages/816x544/20180223_151257/21463/rolls-royce0.jpg"  width="450px" alt="">
+            <p style="font-size: large;">
+               Touted as the quietest car in the world, the new Phantom packs a 130kg sound insulation system, double laminated glass and four-corner air suspension system to cocoon the occupants from the harsh outside world. <br> It is powered by a twin-turbo 6.75-litre V12 engine that produces 571PS of power and 900Nm of torque. The engine is turned to deliver all of its torque at revs as low as 1,700. The eight-speed auto does its job well and although the Phantom VIII weighs over 2.6-tonnes, it can hit 100kmph in 5.4 seconds and clock a top speed of 250kmph. <br> This is easily the most inviting cabin in a car. It gets seats that are forged from the choicest of leather and recline in multiple ways to find the perfect and the most comfortable seating position.
+            </p>
+         </div>
+      </div>
+   </main>
+   
+
+   <script src="../cars.js"></script>
+   <script>
+       let globalDataRecord = []
+            function getBlog() {
+                globalDataRecord = [...cars]
+            }
+            getBlog();
+            const productContainer = document.getElementById(
+                    "product-list-container"
+                );
+                
+                globalDataRecord.forEach((item) => {
+                    const singleProduct = `
+                    <div class="product-card">
+                        <img
+                        class="product-image"
+                        src="${item.image}"
+                        />
+                        <h4 style="padding: 5px">${item.title}</h4>
+                        <p style="padding: 5px">By: ${item.author} </p>
+                        <p style="padding: 5px">Date: ${item.date}</p>
+                    </div>`;
+
+                    productContainer.innerHTML += singleProduct
+                });
+                
+  </script>
+</body>
+</html>
